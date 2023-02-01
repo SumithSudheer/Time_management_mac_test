@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 from .auth import AuthHandlerIns , is_super_admin
 
 
-from .models import User, Branch_cl, Batch_cl, Course_cl, Subject_cl, Topic_cl, Subtopic_cl
+from .models import User, Branch_cl, Batch_cl, Course_cl, Subject_cl, Topic_cl, Subtopic_cl, batch, branch, course, subject, topic, subtopic
 from faculty.models import User as Faculty_user
 import jwt, datetime
 # Create your views here.
@@ -93,9 +93,24 @@ class Batch(APIView):
             return Response({"mess":"yes"})
         else:
             return Response({"mess":"no"})
+    def get(self, request):
+        if is_super_admin(request):
+            
+            return Response({"mess":list(batch.find({}))})
+        else:
+            return Response({"mess":"no"})
+        
 
 
 class Course(APIView):
+    def get(self, request):
+        if is_super_admin(request):
+            
+            return Response({"mess":list(course.find({}))})
+        else:
+            return Response({"mess":"no"})
+
+
     def post(self, request):
         if is_super_admin(request):
             Course_cl.create_course(request,name=request.data['name'])
@@ -112,6 +127,12 @@ class Course(APIView):
 
 
 class Subject(APIView):
+    def get(self, request):
+        if is_super_admin(request):
+            
+            return Response({"mess":list(subject.find({}))})
+        else:
+            return Response({"mess":"no"})
     def post(self, request):
         if is_super_admin(request):
             Subject_cl.create_subject(request,name=request.data['name'])
@@ -131,6 +152,12 @@ class Subject(APIView):
 
 
 class Topic(APIView):
+    def get(self, request):
+        if is_super_admin(request):
+            
+            return Response({"mess":list(topic.find({}))})
+        else:
+            return Response({"mess":"no"})
     def post(self, request):
         if is_super_admin(request):
             Topic_cl.create_topic(request,name=request.data['name'])
@@ -148,6 +175,12 @@ class Topic(APIView):
 
 
 class Subtopic(APIView):
+    def get(self, request):
+        if is_super_admin(request):
+            
+            return Response({"mess":list(subtopic.find({}))})
+        else:
+            return Response({"mess":"no"})
     def post(self, request):
         if is_super_admin(request):
             Subtopic_cl.create_topic(request,name=request.data['name'])
