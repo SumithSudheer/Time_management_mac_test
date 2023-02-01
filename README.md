@@ -1,6 +1,7 @@
 # Time_management_mac_test
 POST
 /admin/user/    ----> Registeration 
+
   body -> {
               "username":"_______",
               "password":"_______"
@@ -8,6 +9,7 @@ POST
           
 POST
 /admin/login/
+
   body -> {
               "username":"_______",
               "password":"_______"
@@ -15,12 +17,14 @@ POST
           
 POST
 /faculty/user/    --> Registeration
+
   body -> {
               "username":"________",
               "password":"________"
           }
 POST
 /faculty/login/
+
    body -> {
               "username":"________",
               "password":"________"
@@ -29,6 +33,7 @@ POST
           
 POST
 /admin/branch/  -----> Registeration  Token required
+
     body  -> {
                 "name":"______",
                 "place":"_____"
@@ -36,7 +41,8 @@ POST
             
             
 POST 
-/admin/branch_manager/<id>/  ---> branch manager assign (id=id of branch, name=name of employee)
+/admin/branch_manager/{id}/  ---> branch manager assign (id=id of branch, name=name of employee)
+
     body  -> {
                 "name":"______"
             }
@@ -44,6 +50,7 @@ POST
             
 POST
 /admin/batch/  --> creating batch to branch name = name of the batch id = id of the branch
+
     body  ->{
             "id":"_______",
             "name":"_______"
@@ -123,10 +130,10 @@ GET
 
 
 PUT
-/admin/facverify/<id>/ ---> Verify the Faculty id= id of the faculty
+/admin/facverify/{id}/ ---> Verify the Faculty id= id of the faculty
 
 DELETE
-/admin/facreject/<id>/  --> Reject Verify Request
+/admin/facreject/{id}/  --> Reject Verify Request
 
 
 POST
