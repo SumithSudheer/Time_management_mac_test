@@ -2,7 +2,7 @@
 POST
 /admin/user/    ----> Registeration 
 
-  body -> {
+  body  -> {
               "username":"_______",
               "password":"_______"
           }
