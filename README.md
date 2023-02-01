@@ -69,6 +69,7 @@ PUT
 
 POST
 /admin/subject/
+
       body --> {
                   "name":"_______"
               }
@@ -76,6 +77,7 @@ POST
               
 PUT
 /admin/course/
+
     body -->{
                 "subject_id":"_________________________",
                 "course_id":"__________________________"
@@ -84,6 +86,7 @@ PUT
             
 POST
 /admin/topic/
+
       body -->{
                   "name":"______"
               }
@@ -91,6 +94,7 @@ POST
 
 PUT
 /admin/subject/
+
       body -->{
                   "topic_id":"___________________________",
                   "subject_id":"__________________________"
@@ -99,6 +103,7 @@ PUT
               
 POST
 /admin/subtopic/
+
     body -->{
                 "name":"subt1"
             }
@@ -106,6 +111,7 @@ POST
             
 PUT
 /admin/topic/
+
     body -->{
                 "topic_id":"_____________________________",
                 "subtopic_id":"____________________________"
@@ -125,6 +131,7 @@ DELETE
 
 POST
 /admin/addfac/ --> admin add faculty
+
     body-->{
               "username":"________",
               "password":"_________"
